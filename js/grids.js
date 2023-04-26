@@ -42,11 +42,11 @@ $(function () {
 
 
    function checkFormatter(value, row, index) {
-      return '<input type="checkbox" '+(parseInt(value)===1?'checked':'')+' />';
+      return '<input type="checkbox" '+(parseInt(value)==1?'checked':'')+' />';
    }
 
    function LEDIndicatorFormatter(value, row, index) {
-      return '<div class="'+(parseInt(value)===1?'mini-led-green':'mini-led-red')+'"></div>';
+      return '<div class="'+(parseInt(value)==1?'mini-led-green':'mini-led-red')+'"></div>';
    }
 
   // ------------------------- USERS definitions -------------------------
@@ -224,7 +224,7 @@ $(function () {
          formatter : checkFormatter,
          events: {
             'click input': function (e, value, row) {
-              genericSetField('user_enable', value === '1' ? '0': '1', row.user_id);
+              genericSetField('user_enable', value == '1' ? '0': '1', row.user_id);
             }
          }
       },
@@ -234,7 +234,7 @@ $(function () {
          formatter : checkFormatter,
          events: {
             'click input': function (e, value, row) {
-              genericSetField('user_2factor', value === '1' ? '0': '1', row.user_id);
+              genericSetField('user_2factor', value == '1' ? '0': '1', row.user_id);
             }
          }
       },
@@ -244,7 +244,7 @@ $(function () {
          formatter : checkFormatter,
          events: {
             'click input': function (e, value, row) {
-              genericSetField('user_2factor_paired', value === '1' ? '0': '1', row.user_id);
+              genericSetField('user_2factor_paired', value == '1' ? '0': '1', row.user_id);
             }
          }
       },
